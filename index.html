@@ -1798,7 +1798,7 @@
   <header class="site-header" id="top">
     <div class="container nav-container">
       <!-- Logo Wordmark -->
-      <a href="#top" class="brand-logo" aria-label="Palco Video - Home">
+      <a href="/" class="brand-logo" aria-label="Palco Video - Home">
         <span class="brand-logo-text">PALCO VIDEO<span class="dot">.</span></span>
         <span class="brand-logo-tagline">EST. 1985 &bull; 40 YEARS</span>
       </a>
@@ -1812,8 +1812,8 @@
           <ul class="nav-menu" role="menubar">
             <li role="none"><a href="#top" class="nav-link active" role="menuitem">Home</a></li>
             <li role="none"><a href="#services" class="nav-link" role="menuitem">Services</a></li>
-            <li role="none"><a href="#work" class="nav-link" role="menuitem">Work</a></li>
             <li role="none"><a href="#clients" class="nav-link" role="menuitem">Clients</a></li>
+            <li role="none"><a href="#work" class="nav-link" role="menuitem">Work</a></li>
             <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
             <li role="none"><a href="#faq" class="nav-link" role="menuitem">FAQ</a></li>
             <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
@@ -2582,7 +2582,7 @@
       <div class="footer-top-grid">
         <!-- Brand & Blurb -->
         <div class="footer-brand-col">
-          <a href="#top" class="brand-logo" aria-label="Palco Video home">
+          <a href="/" class="brand-logo" aria-label="Palco Video home">
             <span class="brand-logo-text">PALCO VIDEO<span class="dot">.</span></span>
             <span class="brand-logo-tagline">EST. 1985 &bull; 40 YEARS IN MEDIA</span>
           </a>
@@ -2615,8 +2615,8 @@
           <ul class="footer-nav-links">
             <li><a href="#top">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#work">Selected Work</a></li>
             <li><a href="#clients">Clients</a></li>
+            <li><a href="#work">Selected Work</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -2698,6 +2698,25 @@
         link.addEventListener('click', () => {
           if (window.innerWidth <= 960) {
             closeMenu();
+          }
+        });
+      });
+
+      // Brand Logo click handler: Refresh/navigate to '/' and move to top
+      const brandLogos = document.querySelectorAll('.brand-logo');
+      brandLogos.forEach(logo => {
+        logo.addEventListener('click', (e) => {
+          if (window.location.protocol === 'file:') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (window.location.hash) {
+              history.pushState(null, '', window.location.pathname);
+            }
+          } else {
+            // On deployed website (e.g. Vercel)
+            // Navigate/refresh to '/' and reset scroll to top
+            e.preventDefault();
+            window.location.href = '/';
           }
         });
       });
