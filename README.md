@@ -3,7 +3,7 @@
 Single-file, responsive landing page for **Palco Video**, a commercial production house in India (est. 1985) serving brands, government ministries and creators from Delhi, Chandigarh and Mumbai. Content is sourced from the parent site, [palcovideo.com](https://www.palcovideo.com/).
 
 ## Page narrative
-1. **Hero**: positioning and key facts over a muted film loop (a still shows on mobile, on data saver and with reduced motion)
+1. **Hero**: positioning and key facts over a full-bleed production still with a camera-viewfinder overlay (image only on every screen size)
 2. **Trusted-by marquee**: ministries, PSUs and brands
 3. **What is Palco Video?**: a plain-language answer, the studio's heritage, and who it serves (brands, government & PSUs, creators)
 4. **Services**: Video Production, Social Media Management and Creator Management, each with its deliverables
