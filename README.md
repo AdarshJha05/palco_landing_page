@@ -3,7 +3,7 @@
 Single-file, responsive landing page for **Palco Video**, a commercial production house in India (est. 1985) serving brands, government ministries and creators from Delhi, Chandigarh and Mumbai. Content is sourced from the parent site, [palcovideo.com](https://www.palcovideo.com/).
 
 ## Page narrative
-1. **Hero**: positioning, key facts, and an animated camera-viewfinder visual
+1. **Hero**: positioning and key facts over a muted film loop (a still shows on mobile, on data saver and with reduced motion)
 2. **Trusted-by marquee**: ministries, PSUs and brands
 3. **What is Palco Video?**: a plain-language answer, the studio's heritage, and who it serves (brands, government & PSUs, creators)
 4. **Services**: Video Production, Social Media Management and Creator Management, each with its deliverables
@@ -17,8 +17,9 @@ Single-file, responsive landing page for **Palco Video**, a commercial productio
 
 ## Tech stack
 - Pure HTML5, CSS3 and vanilla JavaScript in a single `index.html`, with no build step
-- Typography: Google Fonts (Bebas Neue, Inter, JetBrains Mono)
-- Light studio theme (`#F8F8F6`) with amber accent (`#C88A22`) and dark ink bands (`#121316`)
+- Brand: matches palcovideo.com. See `DESIGN.md` for the tokens.
+- Typography: Google Fonts (Archivo, Instrument Serif, Manrope, JetBrains Mono)
+- Cream ground (`#F1EBEB`) with red accent (`#C21E2B`), black bands, and soft red (`#FF6A78`) for accents on black
 - Motion: headline mask reveal, viewfinder open and running timecode, client marquee, scroll-scrubbed intro text, pinned service card stack, sticky process counter and rail fill, word-by-word section titles, shutter-style image reveals, count-up stats, a timeline that draws on scroll, a header slate naming the current chapter, and a scroll progress bar. All of it respects `prefers-reduced-motion`.
 - WebP images served via `<picture>` with JPG/PNG fallbacks
 - Semantic, accessible markup and JSON-LD `LocalBusiness` structured data
