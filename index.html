@@ -74,6 +74,8 @@
   }
   </script>
 
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; clip-path: none !important; } .reveal * { clip-path: none !important; }</style></noscript>
+
   <style>
     /* ==========================================================================
        CSS CUSTOM PROPERTIES / DESIGN TOKENS (LUXURY EDITORIAL LIGHT THEME)
@@ -2866,6 +2868,239 @@
       .marquee-viewport { overflow-x: auto; }
       .process-rail span { transform: scaleY(1); }
     }
+    /* ---------------------------------- CONTENT ADDITIONS ---------------------------------- */
+    .intro-heritage {
+      max-width: 68ch;
+      margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+      color: var(--text-secondary);
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+    }
+    .intro-who {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: clamp(2.5rem, 5vw, 3.5rem) 0 1rem;
+    }
+    .intro-who + .audience-grid { margin-top: 0; }
+    .audience-card { display: flex; flex-direction: column; }
+    .audience-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: auto;
+      padding-top: 1rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--accent-dark);
+    }
+    .audience-link svg { transition: transform var(--transition-fast); }
+    .audience-link:hover svg { transform: translateX(4px); }
+
+    .process-layout { display: grid; gap: clamp(1.5rem, 4vw, 2.5rem); }
+    .process-intro { margin-bottom: 0; }
+    .process-now { display: none; }
+    .process-note {
+      margin-top: clamp(2rem, 4vw, 3rem);
+      padding: 1rem 1.25rem;
+      border-left: 3px solid var(--accent);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .process-note strong { color: var(--text-primary); }
+    @media (min-width: 960px) {
+      .process-layout {
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        gap: clamp(3rem, 6vw, 5rem);
+        align-items: start;
+      }
+      .process-intro { position: sticky; top: calc(var(--header-height) + 2.5rem); }
+      html.motion .process-now {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 0.6rem;
+        align-items: baseline;
+        margin-top: 2rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--border-medium);
+      }
+      .process-now-num {
+        font-family: var(--font-display);
+        font-size: clamp(3.5rem, 6vw, 5rem);
+        line-height: 1;
+        color: var(--accent);
+      }
+      .process-now-of { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); }
+      .process-now-label {
+        grid-column: 1 / -1;
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-secondary);
+      }
+      .process-now-num.tick { animation: numberTick 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    }
+    html.motion .process-step > div { opacity: 0.55; transition: opacity 0.4s ease; }
+    html.motion .process-step.is-active > div { opacity: 1; }
+
+    .proof-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      margin-bottom: clamp(3rem, 6vw, 4.5rem);
+    }
+    .proof-num {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6.5vw, 5.25rem);
+      line-height: 1;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+    .proof dd { margin-top: 0.4rem; color: var(--muted-on-ink); font-size: 0.98rem; }
+    .pillar-heading {
+      position: relative;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted-on-ink);
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 760px) { .proof-grid { grid-template-columns: 1fr; } }
+
+    .pricing-lead {
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.35;
+      margin-bottom: 0.35rem;
+    }
+    .pricing-lead + .pricing-tagline { color: var(--text-secondary); font-weight: 400; }
+    .service-card .service-list { margin-bottom: 1.5rem; }
+    .shorts-hint {
+      margin-top: 0.3rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .shorts-rail { cursor: grab; }
+    .shorts-rail.dragging { cursor: grabbing; scroll-snap-type: none; user-select: none; }
+    .shorts-rail.dragging a { pointer-events: none; }
+
+    .contact-steps { list-style: none; counter-reset: step; display: grid; gap: 0.7rem; }
+    .contact-steps li {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 1.75rem minmax(0, 1fr);
+      gap: 0.4rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .contact-steps li::before {
+      content: "0" counter(step);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      line-height: 1.9;
+      color: var(--accent);
+    }
+
+    /* ---------------------------------- SCROLL STORY MOTION ---------------------------------- */
+    /* Header slate: names the current chapter */
+    #sceneSlate { display: block; white-space: nowrap; transition: opacity 0.18s ease, transform 0.18s ease; }
+    #sceneSlate.swap { opacity: 0; transform: translateY(4px); }
+
+    /* Section titles rise word by word */
+    .section-title .tw { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.04em; }
+    .section-title .tw > span {
+      display: inline-block;
+      transform: translateY(105%);
+      transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      transition-delay: calc(var(--w, 0) * 45ms + 60ms);
+    }
+    .reveal.is-visible .section-title .tw > span { transform: translateY(0); }
+
+    /* Images open like a shutter */
+    .service-card.reveal .service-img-wrap,
+    .work-card.reveal .work-thumbnail,
+    .archival.reveal .archival-img-wrap {
+      clip-path: inset(0 0 100% 0);
+      transition: clip-path 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+    }
+    .service-card.reveal.is-visible .service-img-wrap,
+    .work-card.reveal.is-visible .work-thumbnail,
+    .archival.reveal.is-visible .archival-img-wrap { clip-path: inset(0 0 0 0); }
+
+    .service-card.reveal {
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), border-color var(--transition-normal), box-shadow var(--transition-normal);
+    }
+
+    /* Services stack: each card pins, the next slides over it */
+    @media (min-width: 900px) and (min-height: 720px) {
+      .services-grid { display: block; }
+      .service-card {
+        position: sticky;
+        top: calc(var(--header-height) + 24px + var(--i, 0) * 14px);
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+        min-height: 430px;
+        margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+        transform-origin: 50% 0;
+        box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.07);
+      }
+      .service-card:last-child { margin-bottom: 0; }
+      .service-card.reveal { transition-delay: 0s; }
+      .service-card.reveal.is-visible:hover { transform: none; }
+      .service-img-wrap { aspect-ratio: auto; height: 100%; min-height: 100%; }
+      .service-img-wrap picture { display: block; position: absolute; inset: 0; }
+      .service-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #121316;
+        opacity: calc(var(--cover, 0) * 0.4);
+        pointer-events: none;
+        z-index: 3;
+      }
+    }
+
+    /* Timeline draws as you read */
+    .timeline::after {
+      content: "";
+      position: absolute;
+      left: 6px; top: 8px; bottom: 8px;
+      width: 1px;
+      background: var(--accent);
+      transform-origin: 50% 0;
+      transform: scaleY(var(--tl, 0));
+    }
+
+    /* FAQ answers slide open where the browser supports it */
+    @supports (interpolate-size: allow-keywords) {
+      html { interpolate-size: allow-keywords; }
+      .faq-item::details-content {
+        block-size: 0;
+        overflow: hidden;
+        transition: block-size 0.35s cubic-bezier(0.16, 1, 0.3, 1), content-visibility 0.35s allow-discrete;
+      }
+      .faq-item[open]::details-content { block-size: auto; }
+    }
+
+    @keyframes numberTick { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .service-card.reveal .service-img-wrap,
+      .work-card.reveal .work-thumbnail,
+      .archival.reveal .archival-img-wrap { clip-path: none !important; }
+      .timeline::after { transform: scaleY(1); }
+      .service-card { position: relative; top: auto; }
+    }
   </style>
 </head>
 <body>
@@ -2883,7 +3118,7 @@
     <div class="container nav-container">
       <a href="/" class="brand-logo" aria-label="Palco Video - Home">
         <span class="brand-logo-text">PALCO VIDEO<span class="dot">.</span></span>
-        <span class="brand-logo-tagline">EST. 1985 &bull; 40 YEARS</span>
+        <span class="brand-logo-tagline" id="sceneSlate">EST. 1985 &bull; 40 YEARS</span>
       </a>
 
       <nav class="desktop-nav" aria-label="Main Navigation">
@@ -2963,7 +3198,7 @@
         <div class="hero-copy">
           <p class="hero-kicker load-in" style="--d:0">
             <span class="hero-kicker-dot" aria-hidden="true"></span>
-            Palco Video &middot; Commercial production house &middot; Since 1985
+            Commercial production house &middot; Since 1985
           </p>
 
           <h1 class="hero-heading" id="hero-heading">
@@ -2972,7 +3207,7 @@
           </h1>
 
           <p class="hero-lead load-in" style="--d:3">
-            A 40-year production house for <strong>brands</strong>, <strong>government ministries</strong> and <strong>creators</strong>. We shoot commercials, run ad campaigns and manage social content end to end, from brief to broadcast, out of Delhi, Chandigarh and Mumbai.
+            Commercial shoots, marketing management and ad campaigns, backed by four decades of production craft. We take <strong>brands</strong>, <strong>government ministries</strong> and <strong>creators</strong> from brief to broadcast, out of Delhi, Chandigarh and Mumbai.
           </p>
 
           <div class="hero-cta-group load-in" style="--d:4">
@@ -2985,7 +3220,7 @@
 
           <dl class="hero-facts load-in" style="--d:5">
             <div class="hero-fact"><dt>40 yrs</dt><dd>of media craft, since 1985</dd></div>
-            <div class="hero-fact"><dt>200+</dt><dd>projects delivered</dd></div>
+            <div class="hero-fact"><dt>500+</dt><dd>clients served</dd></div>
             <div class="hero-fact"><dt>3 hubs</dt><dd>Delhi &middot; Chandigarh &middot; Mumbai</dd></div>
           </dl>
         </div>
@@ -3038,29 +3273,34 @@
     <!-- ==========================================================================
          02 · WHO WE ARE
          ========================================================================== -->
-    <section class="section-padding intro" id="intro" aria-labelledby="intro-heading">
+    <section class="section-padding intro" id="intro" aria-labelledby="intro-heading" data-scene="What is Palco">
       <div class="container">
-        <span class="section-label reveal">[ Who we are ]</span>
-        <h2 class="visually-hidden" id="intro-heading">Who we are</h2>
+        <span class="section-label reveal">[ What is Palco Video? ]</span>
+        <h2 class="visually-hidden" id="intro-heading">What is Palco Video?</h2>
         <p class="intro-statement" data-scrub>
-          Palco Video is the brand- and business-facing arm of a legacy production house. For four decades the studio has made films, serials and Gurbani recordings for broadcast. Today the same crews, equipment and post-production pipelines make commercials, campaigns and social content for brands and institutions.
+          Palco Video makes video and gets it seen. We plan, shoot, edit and market commercials, campaigns and social content for brands, government and creators.
         </p>
+        <p class="intro-heritage reveal">We are the brand-facing arm of a legacy production house. Ranjit Studio spent four decades making films, serials and Gurbani recordings for broadcast, and those same crews, equipment and post-production pipelines now work on your brief.</p>
 
+        <h3 class="intro-who reveal">Who it&rsquo;s for</h3>
         <div class="audience-grid stagger">
           <article class="audience-card reveal">
             <span class="audience-idx">For brands</span>
             <h3>Ad films that sell</h3>
             <p>TV commercials, product launches, packaging reveals and social content that keeps going after launch, for consumer and industrial brands like Amway, Rathi Steel, Sohna Masala and Archita Masala.</p>
+            <a href="#services" class="audience-link"><span>What we make</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </article>
           <article class="audience-card reveal">
             <span class="audience-idx">For government &amp; PSUs</span>
             <h3>Communication at national scale</h3>
             <p>Carefully fact-checked public campaigns, documentaries and programme films, with dubbing in several regional Indian languages and reach across the country.</p>
+            <a href="#clients" class="audience-link"><span>Ministries we work with</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </article>
           <article class="audience-card reveal">
             <span class="audience-idx">For creators</span>
             <h3>You create. We build the rest.</h3>
             <p>A dedicated team that handles content planning, scripts, shoots, editing, channel management and label collaborations, so you can focus on your craft.</p>
+            <a href="#services" class="audience-link"><span>Creator management</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </article>
         </div>
       </div>
@@ -3069,14 +3309,14 @@
     <!-- ==========================================================================
          03 · SERVICES
          ========================================================================== -->
-    <section class="section-padding section-alt" id="services" aria-labelledby="services-heading">
+    <section class="section-padding section-alt" id="services" aria-labelledby="services-heading" data-scene="What we do">
       <div class="container">
         <header class="section-header split reveal">
           <div>
             <span class="section-label">[ What we do ]</span>
             <h2 class="section-title" id="services-heading">Everything from brief to broadcast</h2>
           </div>
-          <p class="section-subtitle">Three services, one house. Book a single shoot, or hand us your whole content operation.</p>
+          <p class="section-subtitle">Three core pillars, one house. Book a single shoot, or hand us your whole content operation.</p>
         </header>
 
         <div class="services-grid stagger">
@@ -3172,15 +3412,19 @@
     <!-- ==========================================================================
          04 · PROCESS
          ========================================================================== -->
-    <section class="section-padding" id="process" aria-labelledby="process-heading">
+    <section class="section-padding" id="process" aria-labelledby="process-heading" data-scene="How it works">
       <div class="container">
-        <header class="section-header split reveal">
-          <div>
+        <div class="process-layout">
+          <header class="section-header process-intro reveal">
             <span class="section-label">[ How it works ]</span>
             <h2 class="section-title" id="process-heading">How a Palco production runs</h2>
-          </div>
-          <p class="section-subtitle">The full pipeline runs under one roof, from pre-production through final colour grading and delivery, so nothing gets lost between vendors.</p>
-        </header>
+            <p class="section-subtitle">Five stages, all in one house. Here is what happens between your brief and the finished film.</p>
+            <p class="process-now" aria-hidden="true">
+              <span class="process-now-num" id="processNowNum">01</span>
+              <span class="process-now-of">/ 05</span>
+              <span class="process-now-label" id="processNowLabel">The brief</span>
+            </p>
+          </header>
 
         <ol class="process-list" id="processList">
           <li class="process-rail" aria-hidden="true"><span id="processRailFill"></span></li>
@@ -3188,28 +3432,28 @@
             <span class="process-num">01</span>
             <div>
               <h3>The brief</h3>
-              <p>Send us the brief. A lead producer reviews it and replies with crew availability, location feasibility and an indicative cost band, usually within two working days.</p>
+              <p>Send us the brief, no attachments needed at first. A lead producer replies with crew availability, location feasibility and an indicative cost band, usually within two working days.</p>
             </div>
           </li>
           <li class="process-step reveal">
             <span class="process-num">02</span>
             <div>
               <h3>Pre-production</h3>
-              <p>Scriptwriting and creative development, treatment and storyboards, plus crew, kit and location management planned in-house.</p>
+              <p>Scriptwriting and creative development, plus crew, kit and location management.</p>
             </div>
           </li>
           <li class="process-step reveal">
             <span class="process-num">03</span>
             <div>
               <h3>The shoot</h3>
-              <p>Cinema cameras and multi-unit location crews for studio, event and on-ground shoots, anywhere in India, from mega-plants to high-altitude border passes.</p>
+              <p>Cinema cameras and multi-unit location crews for studio, event and on-ground shoots, anywhere in India, from mega-plants to high-altitude border passes. A typical single-asset commercial takes one to two shoot days.</p>
             </div>
           </li>
           <li class="process-step reveal">
             <span class="process-num">04</span>
             <div>
               <h3>Post-production</h3>
-              <p>Editing, colour grading, sound, voiceover, motion graphics and VFX, delivered as one finished cut.</p>
+              <p>Editing, colour grading, sound, voiceover, motion graphics and VFX. Post on a typical commercial is delivered within two to three weeks.</p>
             </div>
           </li>
           <li class="process-step reveal">
@@ -3220,21 +3464,32 @@
             </div>
           </li>
         </ol>
+        </div>
+
+        <p class="process-note reveal"><strong>On a retainer?</strong> The same pipeline runs on a monthly content calendar, and scope is reviewed every quarter.</p>
       </div>
     </section>
 
     <!-- ==========================================================================
          05 · CAPABILITIES (dark band)
          ========================================================================== -->
-    <section class="section-padding capabilities" id="capabilities" aria-labelledby="capabilities-heading">
+    <section class="section-padding capabilities" id="capabilities" aria-labelledby="capabilities-heading" data-scene="Why Palco">
       <div class="container">
         <header class="section-header split reveal">
           <div>
-            <span class="section-label">[ Capabilities ]</span>
-            <h2 class="section-title" id="capabilities-heading">Built for speed &amp; scale</h2>
+            <span class="section-label">[ Why Palco ]</span>
+            <h2 class="section-title" id="capabilities-heading">The shoot and the release, in one house</h2>
           </div>
-          <p class="section-subtitle">The same house delivers national television, ministry campaigns and fast social content.</p>
+          <p class="section-subtitle">Marketing and distribution sit in the same house as the shoot, so the people who make your film can also help it reach an audience.</p>
         </header>
+
+        <dl class="proof-grid stagger">
+          <div class="proof reveal"><dt class="proof-num" data-target="200" data-suffix="+">200+</dt><dd>Punjabi films marketed</dd></div>
+          <div class="proof reveal"><dt class="proof-num" data-target="170000" data-format="in" data-suffix="+">1,70,000+</dt><dd>subscribers on our own channel</dd></div>
+          <div class="proof reveal"><dt class="proof-num" data-target="8">8</dt><dd>NTPC thermal and solar sites covered across India</dd></div>
+        </dl>
+
+        <h3 class="pillar-heading reveal">Built for speed &amp; scale</h3>
 
         <div class="pillar-grid stagger">
           <article class="pillar reveal">
@@ -3259,14 +3514,14 @@
     <!-- ==========================================================================
          06 · CLIENTS
          ========================================================================== -->
-    <section class="section-padding" id="clients" aria-labelledby="clients-heading">
+    <section class="section-padding" id="clients" aria-labelledby="clients-heading" data-scene="Clients">
       <div class="container">
         <header class="section-header split reveal">
           <div>
             <span class="section-label">[ Clients ]</span>
             <h2 class="section-title" id="clients-heading">Four decades of trust</h2>
           </div>
-          <p class="section-subtitle">Four decades of production for government ministries, public sector companies and consumer brands.</p>
+          <p class="section-subtitle">Who we have produced for, and what we made: Union ministries, public-sector companies and consumer brands.</p>
         </header>
 
         <div class="client-highlights stagger">
@@ -3312,7 +3567,7 @@
     <!-- ==========================================================================
          07 · NUMBERS
          ========================================================================== -->
-    <section class="numbers-section section-padding" id="numbers" aria-label="Palco Video by the numbers">
+    <section class="numbers-section section-padding" id="numbers" aria-label="Palco Video by the numbers" data-scene="By the numbers">
       <div class="container">
         <span class="section-label numbers-label reveal">[ By the numbers &middot; since 1985 ]</span>
         <div class="numbers-grid">
@@ -3343,7 +3598,7 @@
     <!-- ==========================================================================
          08 · SELECTED WORK
          ========================================================================== -->
-    <section class="section-padding" id="work" aria-labelledby="work-heading">
+    <section class="section-padding" id="work" aria-labelledby="work-heading" data-scene="Selected work">
       <div class="container">
         <header class="section-header split reveal">
           <div>
@@ -3445,6 +3700,7 @@
             <div>
               <span class="section-label">[ Shorts &amp; Reels ]</span>
               <h3 class="shorts-title">Vertical content, made for the feed</h3>
+              <p class="shorts-hint">Drag sideways to browse</p>
             </div>
             <a href="https://youtube.com/@palco_media" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
               <span>Visit our channel</span>
@@ -3468,14 +3724,14 @@
     <!-- ==========================================================================
          09 · ABOUT — STORY & FOUNDERS
          ========================================================================== -->
-    <section class="section-padding section-alt" id="about" aria-labelledby="about-heading">
+    <section class="section-padding section-alt" id="about" aria-labelledby="about-heading" data-scene="Our story">
       <div class="container">
         <header class="section-header split reveal">
           <div>
             <span class="section-label">[ Our story ]</span>
             <h2 class="section-title" id="about-heading">Forty years behind the camera</h2>
           </div>
-          <p class="section-subtitle">Built on the foundation of Ranjit Studio and Palco Video, and now run by the second generation.</p>
+          <p class="section-subtitle">Two generations, one house. Built on the foundation of Ranjit Studio and Palco Video.</p>
         </header>
 
         <div class="story-layout">
@@ -3527,7 +3783,7 @@
                 <span class="team-role">Founder</span>
               </div>
             </div>
-            <p class="team-bio">Spent more than three decades shaping Punjabi cinema and Hindi TV serials. His experience in storytelling, distribution and large-scale production is the foundation Palco Video is built on.</p>
+            <p class="team-bio">More than three decades shaping Punjabi cinema and Hindi TV serials. That body of work is the foundation Palco Video is built on.</p>
           </article>
 
           <article class="team-card reveal">
@@ -3540,7 +3796,7 @@
                 <span class="team-role">Second-Generation Director</span>
               </div>
             </div>
-            <p class="team-bio">Leads the modern commercial chapter, combining the house's production tradition with new craft in digital content, motion and creator pipelines.</p>
+            <p class="team-bio">Drives the modern commercial chapter, blending the house's production tradition with new craft.</p>
           </article>
         </div>
 
@@ -3561,7 +3817,7 @@
     <!-- ==========================================================================
          10 · ENGAGEMENT MODELS
          ========================================================================== -->
-    <section class="section-padding" id="engagement" aria-labelledby="engagement-heading">
+    <section class="section-padding" id="engagement" aria-labelledby="engagement-heading" data-scene="Work with us">
       <div class="container">
         <header class="section-header center reveal">
           <span class="section-label">[ Ways to work with us ]</span>
@@ -3572,6 +3828,7 @@
         <div class="pricing-grid stagger">
           <article class="pricing-card reveal">
             <h3 class="pricing-title">Project-Based</h3>
+            <p class="pricing-lead">Bring the brief. We bring the cinematic edge.</p>
             <p class="pricing-tagline">A single commercial, ad film or campaign asset.</p>
             <ul class="pricing-bullets">
               <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>End-to-end production</span></li>
@@ -3584,6 +3841,7 @@
           <article class="pricing-card featured reveal">
             <div class="featured-pill">Most Chosen</div>
             <h3 class="pricing-title">Social Retainer</h3>
+            <p class="pricing-lead">Your complete digital presence, handled.</p>
             <p class="pricing-tagline">Your brand's always-on content and growth engine.</p>
             <ul class="pricing-bullets">
               <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Monthly content calendars &amp; shoots</span></li>
@@ -3595,9 +3853,10 @@
 
           <article class="pricing-card reveal">
             <h3 class="pricing-title">Scale &amp; Creator</h3>
+            <p class="pricing-lead">Your vision. Our infrastructure.</p>
             <p class="pricing-tagline">High-volume institutional production, or dedicated management for top creators.</p>
             <ul class="pricing-bullets">
-              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Multi-site production</span></li>
+              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Multi-site, multi-unit production</span></li>
               <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Dedicated strategy &amp; analytics teams</span></li>
               <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Compliance, versioning and brand safety</span></li>
             </ul>
@@ -3610,7 +3869,7 @@
     <!-- ==========================================================================
          11 · FAQ
          ========================================================================== -->
-    <section class="section-padding section-alt" id="faq" aria-labelledby="faq-heading">
+    <section class="section-padding section-alt" id="faq" aria-labelledby="faq-heading" data-scene="FAQ">
       <div class="container">
         <header class="section-header center reveal">
           <span class="section-label">[ FAQ ]</span>
@@ -3657,12 +3916,12 @@
     <!-- ==========================================================================
          12 · CONTACT
          ========================================================================== -->
-    <section class="section-padding contact-section" id="contact" aria-labelledby="contact-heading">
+    <section class="section-padding contact-section" id="contact" aria-labelledby="contact-heading" data-scene="Contact">
       <div class="container">
         <header class="section-header reveal">
           <span class="section-label">[ Get on the call sheet ]</span>
           <h2 class="section-title" id="contact-heading">Bring us the brief.</h2>
-          <p class="section-subtitle">Tell us about the shoot. A producer replies with crew availability, a location plan and a cost band, usually within two working days.</p>
+          <p class="section-subtitle">Tell us about the shoot. A few lines is enough to start.</p>
         </header>
 
         <div class="contact-layout">
@@ -3718,6 +3977,15 @@
           </div>
 
           <div class="contact-details reveal">
+            <div class="contact-block">
+              <h3 class="contact-block-title">What happens next</h3>
+              <ol class="contact-steps">
+                <li>You send the brief. No attachments needed at first.</li>
+                <li>A lead producer checks crew availability and location feasibility.</li>
+                <li>You get a reply with a location plan and a cost band, usually within two working days.</li>
+              </ol>
+            </div>
+
             <div class="contact-block">
               <h3 class="contact-block-title">Direct lines</h3>
               <ul class="contact-methods">
@@ -3918,6 +4186,25 @@
          2. SCROLL REVEAL VIA INTERSECTION OBSERVER
          ======================================================================== */
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion) document.documentElement.classList.add('motion');
+
+      // Split section titles into words for the rise-in reveal
+      if (!prefersReducedMotion) {
+        document.querySelectorAll('.section-title').forEach(title => {
+          const words = title.textContent.trim().split(/\s+/);
+          title.textContent = '';
+          words.forEach((word, i) => {
+            const outer = document.createElement('span');
+            const inner = document.createElement('span');
+            outer.className = 'tw';
+            inner.textContent = word;
+            inner.style.setProperty('--w', i);
+            outer.appendChild(inner);
+            title.appendChild(outer);
+            if (i < words.length - 1) title.appendChild(document.createTextNode(' '));
+          });
+        });
+      }
 
       // Stagger index for grouped reveals
       document.querySelectorAll('.stagger').forEach(group => {
@@ -3941,55 +4228,35 @@
 
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // Count-Up Animation for Stat Numbers
-        const numbersSection = document.getElementById('numbers');
-        if (numbersSection) {
-          let hasAnimated = false;
-          const statNumbers = numbersSection.querySelectorAll('.stat-number');
+        // Count-up for any stat carrying data-target
+        const countObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            observer.unobserve(entry.target);
 
-          const numberObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting && !hasAnimated) {
-                hasAnimated = true;
-                statNumbers.forEach(stat => {
-                  const target = parseInt(stat.getAttribute('data-target'), 10);
-                  const suffix = stat.getAttribute('data-suffix') || '';
-                  const formatComma = stat.getAttribute('data-format') === 'comma';
-                  const duration = 1600; // ms
-                  const startTime = performance.now();
+            const stat = entry.target;
+            const target = parseInt(stat.getAttribute('data-target'), 10);
+            const suffix = stat.getAttribute('data-suffix') || '';
+            const format = stat.getAttribute('data-format');
+            const render = (val) => {
+              if (format === 'comma') return val.toLocaleString('en-US');
+              if (format === 'in') return val.toLocaleString('en-IN');
+              return String(val);
+            };
+            const duration = 1600; // ms
+            const startTime = performance.now();
 
-                  function updateCount(currentTime) {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    // Ease out quart curve
-                    const ease = 1 - Math.pow(1 - progress, 4);
-                    const currentVal = Math.floor(ease * target);
+            function updateCount(currentTime) {
+              const progress = Math.min((currentTime - startTime) / duration, 1);
+              const ease = 1 - Math.pow(1 - progress, 4); // ease-out quart
+              stat.textContent = `${render(progress < 1 ? Math.floor(ease * target) : target)}${suffix}`;
+              if (progress < 1) requestAnimationFrame(updateCount);
+            }
+            requestAnimationFrame(updateCount);
+          });
+        }, { threshold: 0.4 });
 
-                    let formattedVal = currentVal;
-                    if (formatComma) {
-                      formattedVal = currentVal.toLocaleString('en-US');
-                    }
-                    stat.textContent = `${formattedVal}${suffix}`;
-
-                    if (progress < 1) {
-                      requestAnimationFrame(updateCount);
-                    } else {
-                      // Final target state
-                      let finalVal = target;
-                      if (formatComma) finalVal = target.toLocaleString('en-US');
-                      stat.textContent = `${finalVal}${suffix}`;
-                    }
-                  }
-
-                  requestAnimationFrame(updateCount);
-                });
-                numberObserver.disconnect();
-              }
-            });
-          }, { threshold: 0.25 });
-
-          numberObserver.observe(numbersSection);
-        }
+        document.querySelectorAll('[data-target]').forEach(el => countObserver.observe(el));
       } else {
         // Fallback for no IntersectionObserver or reduced motion
         document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
@@ -4029,6 +4296,49 @@
       // Gentle parallax on the hero image
       const heroMedia = document.querySelector('.viewfinder-media');
 
+      // Header slate: shows which chapter of the page you are on
+      const sceneSections = Array.from(document.querySelectorAll('[data-scene]'));
+      const sceneSlate = document.getElementById('sceneSlate');
+      const slateDefault = sceneSlate ? sceneSlate.textContent : '';
+      let slateText = slateDefault;
+      function setSlate(text) {
+        if (!sceneSlate || text === slateText) return;
+        slateText = text;
+        if (prefersReducedMotion) { sceneSlate.textContent = text; return; }
+        sceneSlate.classList.add('swap');
+        setTimeout(() => {
+          sceneSlate.textContent = slateText;
+          sceneSlate.classList.remove('swap');
+        }, 180);
+      }
+
+      // Sticky process counter
+      const processNowNum = document.getElementById('processNowNum');
+      const processNowLabel = document.getElementById('processNowLabel');
+      let processCurrent = 0;
+
+      // Story timeline line
+      const timeline = document.querySelector('.timeline');
+
+      // Services stack: covered cards shrink and dim
+      const stackCards = Array.from(document.querySelectorAll('.service-card'));
+      const stackQuery = window.matchMedia('(min-width: 900px) and (min-height: 720px)');
+      function updateStack() {
+        stackCards.forEach((card, i) => {
+          const next = stackCards[i + 1];
+          if (!next || !stackQuery.matches) {
+            card.style.scale = '';
+            card.style.removeProperty('--cover');
+            return;
+          }
+          const height = card.offsetHeight;
+          const pinTop = siteHeader.offsetHeight + 24 + i * 14;
+          const covered = Math.min(Math.max((pinTop + height - next.getBoundingClientRect().top) / height, 0), 1);
+          card.style.scale = 1 - covered * 0.05;
+          card.style.setProperty('--cover', covered);
+        });
+      }
+
       let ticking = false;
       function onScroll() {
         const y = window.pageYOffset;
@@ -4046,6 +4356,10 @@
           if (navIds.has(id) && probe >= section.offsetTop) current = id;
         });
         if (y >= docH - 4) current = 'contact';
+
+        let sceneIdx = -1;
+        sceneSections.forEach((section, i) => { if (probe >= section.offsetTop) sceneIdx = i; });
+        setSlate(sceneIdx < 0 ? slateDefault : `SC ${String(sceneIdx + 1).padStart(2, '0')} \u00B7 ${sceneSections[sceneIdx].dataset.scene.toUpperCase()}`);
         menuItems.forEach(item => {
           item.classList.toggle('active', item.getAttribute('href').substring(1) === current);
         });
@@ -4069,7 +4383,23 @@
             const sr = step.getBoundingClientRect();
             step.classList.toggle('is-active', sr.top + 28 < anchor);
           });
+          const active = Math.max(processSteps.filter(step => step.classList.contains('is-active')).length - 1, 0);
+          if (active !== processCurrent && processNowNum) {
+            processCurrent = active;
+            processNowNum.textContent = String(active + 1).padStart(2, '0');
+            processNowLabel.textContent = processSteps[active].querySelector('h3').textContent;
+            processNowNum.classList.remove('tick');
+            void processNowNum.offsetWidth;
+            processNowNum.classList.add('tick');
+          }
         }
+
+        if (timeline) {
+          const r = timeline.getBoundingClientRect();
+          timeline.style.setProperty('--tl', Math.min(Math.max((vh * 0.7 - r.top) / r.height, 0), 1));
+        }
+
+        updateStack();
 
         if (heroMedia && y < vh * 1.2) {
           heroMedia.style.transform = `translate3d(0, ${y * 0.06}px, 0)`;
@@ -4097,6 +4427,36 @@
           requestAnimationFrame(tick);
         };
         requestAnimationFrame(tick);
+      }
+
+      // Drag the Shorts rail sideways with a mouse (touch already scrolls natively)
+      const shortsRail = document.querySelector('.shorts-rail');
+      if (shortsRail) {
+        let dragging = false, dragged = false, startX = 0, startLeft = 0;
+        shortsRail.addEventListener('pointerdown', (e) => {
+          if (e.pointerType !== 'mouse') return;
+          dragging = true;
+          dragged = false;
+          startX = e.clientX;
+          startLeft = shortsRail.scrollLeft;
+        });
+        window.addEventListener('pointermove', (e) => {
+          if (!dragging) return;
+          const dx = e.clientX - startX;
+          if (Math.abs(dx) > 5) {
+            dragged = true;
+            shortsRail.classList.add('dragging');
+          }
+          if (dragged) shortsRail.scrollLeft = startLeft - dx;
+        });
+        window.addEventListener('pointerup', () => {
+          dragging = false;
+          shortsRail.classList.remove('dragging');
+        });
+        shortsRail.addEventListener('click', (e) => {
+          if (dragged) { e.preventDefault(); dragged = false; }
+        }, true);
+        shortsRail.addEventListener('dragstart', (e) => e.preventDefault());
       }
 
       // Pre-select the form scope from any CTA carrying data-scope

@@ -5,10 +5,10 @@ Single-file, responsive landing page for **Palco Video**, a commercial productio
 ## Page narrative
 1. **Hero**: positioning, key facts, and an animated camera-viewfinder visual
 2. **Trusted-by marquee**: ministries, PSUs and brands
-3. **Who we are**: what Palco is and who it serves (brands, government & PSUs, creators)
+3. **What is Palco Video?**: a plain-language answer, the studio's heritage, and who it serves (brands, government & PSUs, creators)
 4. **Services**: Video Production, Social Media Management and Creator Management, each with its deliverables
-5. **Process**: brief → pre-production → shoot → post → delivery & distribution
-6. **Capabilities**: Broadcast, Institutional and Creator-era pillars
+5. **Process**: brief → pre-production → shoot → post → delivery & distribution, with typical timelines
+6. **Why Palco**: production and distribution in one house, proof points, and the Broadcast, Institutional and Creator-era pillars
 7. **Clients**: NTPC and BRO highlights, plus per-ministry and per-brand work descriptions
 8. **By the numbers**
 9. **Selected work**: 7 films and 8 Shorts/Reels, all linking to YouTube
@@ -19,7 +19,7 @@ Single-file, responsive landing page for **Palco Video**, a commercial productio
 - Pure HTML5, CSS3 and vanilla JavaScript in a single `index.html`, with no build step
 - Typography: Google Fonts (Bebas Neue, Inter, JetBrains Mono)
 - Light studio theme (`#F8F8F6`) with amber accent (`#C88A22`) and dark ink bands (`#121316`)
-- Motion: headline mask reveal, viewfinder open and running timecode, client marquee, scroll-scrubbed intro text, process rail fill, staggered reveals, scroll progress bar. All of it respects `prefers-reduced-motion`.
+- Motion: headline mask reveal, viewfinder open and running timecode, client marquee, scroll-scrubbed intro text, pinned service card stack, sticky process counter and rail fill, word-by-word section titles, shutter-style image reveals, count-up stats, a timeline that draws on scroll, a header slate naming the current chapter, and a scroll progress bar. All of it respects `prefers-reduced-motion`.
 - WebP images served via `<picture>` with JPG/PNG fallbacks
 - Semantic, accessible markup and JSON-LD `LocalBusiness` structured data
 
