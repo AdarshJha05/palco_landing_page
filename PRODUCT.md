@@ -2,19 +2,19 @@
 
 <!-- impeccable:product-schema 1 -->
 
-> Draft built from palcovideo.com and this repository. It has not been through the Impeccable init interview, so please confirm or correct it.
-
 ## Platform
 
 web
 
 ## Users
 
-Decision-makers commissioning video: brand and marketing teams, government ministries and PSUs, and entertainment creators. They arrive to judge whether Palco can handle their brief, then send one.
+The primary user is a brand or marketing team commissioning ad films, campaigns or social retainers. They arrive to judge whether Palco can handle their brief, then send one.
+
+Government ministries, PSUs and entertainment creators are confirmed secondary audiences. They stay on the page, but decisions favour the brand buyer.
 
 ## Product Purpose
 
-A single landing page that explains what Palco Video does and who it serves, proves it with real work and clients, and gets a brief sent. Success means a qualified brief reaches a producer.
+A focused landing page that runs alongside palcovideo.com, which remains Palco's main website. It explains what Palco Video does and who it serves, proves it with real work and clients, and gets a brief sent. Success means a qualified brief reaches a producer.
 
 ## Positioning
 
@@ -40,7 +40,8 @@ The parent site, palcovideo.com, is the binding brand: its name, red accent, typ
 - Named clients and stats exactly as published on palcovideo.com.
 - Founder portraits and the archive photo in `assets/images/`.
 - Absent, so never fabricate: testimonials, case-study results and pricing.
-- Open: "200+ projects delivered" conflicts with other published figures and needs confirming by Palco. Whether the service photos are from real Palco shoots is unconfirmed.
+- The service and hero photos in `assets/images/services/` are stock or AI images. They are illustrative only and must never be presented as real Palco shoots.
+- "200+ projects delivered" stays off this page until Palco confirms it, because it conflicts with the published 500+ clients and 10,000 videos.
 
 ## Product Principles
 

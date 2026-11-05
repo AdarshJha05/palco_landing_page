@@ -7,7 +7,7 @@
   <meta name="description" content="Palco Video is a 40-year commercial production house (est. 1985) for brands, government ministries and creators: ad films, TVCs, social media management and creator management from Delhi, Chandigarh and Mumbai.">
   <meta name="theme-color" content="#000000">
   <link rel="preconnect" href="https://i.ytimg.com">
-  <link rel="preload" as="image" href="assets/images/services/service-video-production.webp" type="image/webp">
+  <link rel="preload" as="image" imagesrcset="assets/images/services/service-video-production-800.webp 800w, assets/images/services/service-video-production.webp 1376w" imagesizes="100vw" type="image/webp">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph / Social Meta -->
@@ -228,20 +228,6 @@
       background: #F1F1ED !important;
     }
 
-    /* Monospace Section Tag */
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: clamp(0.75rem, 1.2vw, 0.85rem);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent-dark);
-      font-weight: 600;
-      margin-bottom: 0.85rem;
-      user-select: none;
-    }
 
     .section-title {
       font-weight: 900;
@@ -374,13 +360,10 @@
       white-space: nowrap;
     }
 
-    .brand-logo-text .dot {
-      color: var(--accent);
-    }
 
     .brand-logo-tagline {
       font-family: var(--font-mono);
-      font-size: 0.65rem;
+      font-size: 0.75rem;
       letter-spacing: 0.14em;
       color: var(--text-muted);
       text-transform: uppercase;
@@ -557,7 +540,7 @@
     }
     .mobile-drawer-tagline {
       font-family: var(--font-mono);
-      font-size: 0.65rem;
+      font-size: 0.75rem;
       letter-spacing: 0.12em;
       color: var(--accent-dark);
       font-weight: 600;
@@ -611,7 +594,7 @@
     }
     .mobile-nav-link .mobile-nav-idx {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       color: var(--accent);
       font-weight: 600;
       letter-spacing: 0.05em;
@@ -668,35 +651,10 @@
       }
     }
 
-    @keyframes badgeShimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
-    }
 
-    @keyframes subtlePulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.08); opacity: 0.85; }
-    }
 
-    @keyframes playHalo {
-      0% { box-shadow: 0 0 0 0 rgba(194, 30, 43, 0.6); }
-      70% { box-shadow: 0 0 0 12px rgba(194, 30, 43, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(194, 30, 43, 0); }
-    }
 
-    @keyframes featuredGlow {
-      0%, 100% {
-        box-shadow: 0 12px 36px rgba(194, 30, 43, 0.16), 0 0 2px rgba(194, 30, 43, 0.5);
-      }
-      50% {
-        box-shadow: 0 18px 50px rgba(194, 30, 43, 0.28), 0 0 10px rgba(194, 30, 43, 0.7);
-      }
-    }
 
 
     /* ==========================================================================
@@ -809,66 +767,10 @@
       transform: translateX(4px);
     }
 
-    /* ==========================================================================
-       SECTION 3: TRUSTED BY (Static text logo chips)
-       ========================================================================== */
-    .trusted-group {
-      margin-bottom: 2.75rem;
-    }
-    .trusted-group:last-child {
-      margin-bottom: 0;
-    }
 
-    .trusted-group-title {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-weight: 600;
-    }
-    .trusted-group-title::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: var(--border-subtle);
-    }
 
-    .chips-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
 
-    .client-chip {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.7rem 1.15rem;
-      background: #FFFFFF;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      border-radius: var(--radius-sm);
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text-primary);
-      transition: all var(--transition-fast);
-      user-select: none;
-      max-width: 100%;
-      word-break: break-word;
-      line-height: 1.4;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-    }
 
-    .client-chip:hover {
-      background: #FFFDFC;
-      border-color: var(--border-accent);
-      color: var(--accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(194, 30, 43, 0.14);
-    }
 
     /* ==========================================================================
        SECTION 4: NUMBERS (Stats Grid)
@@ -987,13 +889,6 @@
         border-bottom: none;
         padding-bottom: 0;
       }
-      .shorts-row {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .shorts-row .btn {
-        width: 100%;
-      }
     }
 
     /* ==========================================================================
@@ -1077,7 +972,6 @@
       position: relative;
       z-index: 2;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-      animation: playHalo 3.5s ease-out infinite;
     }
 
     .work-card:hover .work-play-badge {
@@ -1095,7 +989,7 @@
       left: 12px;
       z-index: 2;
       font-family: var(--font-mono);
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       background: rgba(17, 18, 22, 0.85);
@@ -1131,94 +1025,13 @@
       margin-bottom: 1.25rem;
     }
 
-    .work-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      transition: gap var(--transition-fast);
-    }
-    .work-card:hover .work-link {
-      gap: 0.75rem;
-    }
 
-    /* Shorts & Reels Row */
-    .shorts-row {
-      background: #FFFDFC;
-      border: 1px dashed var(--border-accent);
-      border-radius: var(--radius-md);
-      padding: clamp(1.25rem, 2.5vw, 2rem);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-      box-shadow: 0 4px 20px rgba(194, 30, 43, 0.08);
-    }
 
-    .shorts-info {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
 
-    .shorts-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-sm);
-      background: #cc0000;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
 
-    .shorts-text h4 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 0.2rem;
-    }
-    .shorts-text p {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-    }
 
-    /* ==========================================================================
-       SECTION 6: ABOUT / TEAM "Who is behind the work"
-       ========================================================================== */
-    .about-lead-banner {
-      background: #FFFFFF;
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: clamp(1.75rem, 3.5vw, 2.5rem);
-      margin-bottom: 3.5rem;
-      position: relative;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-      display: grid;
-      grid-template-columns: 1.35fr 0.85fr;
-      gap: clamp(1.75rem, 3vw, 2.75rem);
-      align-items: center;
-    }
 
-    @media (max-width: 860px) {
-      .about-lead-banner {
-        grid-template-columns: 1fr;
-      }
-    }
 
-    .about-archival-frame {
-      background: #F8F8F5;
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      padding: 0.85rem;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-    }
 
     .archival-img-wrap {
       width: 100%;
@@ -1238,53 +1051,19 @@
       transition: transform 0.5s ease;
     }
 
-    .about-archival-frame:hover .archival-img {
-      transform: scale(1.04);
-    }
 
-    .archival-caption {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
 
     .archival-tag {
       font-family: var(--font-mono);
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       letter-spacing: 0.08em;
       color: var(--accent-dark);
       font-weight: 600;
       text-transform: uppercase;
     }
 
-    .archival-desc {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      line-height: 1.4;
-    }
 
-    .about-lead-text {
-      font-size: clamp(1.15rem, 2vw, 1.4rem);
-      color: var(--text-primary);
-      line-height: 1.6;
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-    }
-    .about-lead-text strong {
-      color: var(--accent);
-      font-weight: 600;
-    }
 
-    /* Crew Pill Tags */
-    .crew-tags-title {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-    }
 
     .crew-tags {
       display: flex;
@@ -1400,16 +1179,6 @@
       line-height: 1.6;
     }
 
-    .about-foundation-note {
-      text-align: center;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border-subtle);
-    }
 
     /* ==========================================================================
        SECTION 7: ENGAGEMENT "Three ways to work with us"
@@ -1445,7 +1214,6 @@
       box-shadow: 0 12px 36px rgba(194, 30, 43, 0.18);
       transform: scale(1.02);
       z-index: 2;
-      animation: featuredGlow 4.5s ease-in-out infinite;
     }
     .pricing-card.featured:hover {
       transform: scale(1.02) translateY(-6px);
@@ -1460,7 +1228,7 @@
       background-size: 200% 100%;
       color: #FFFFFF;
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -1468,7 +1236,6 @@
       border-radius: var(--radius-full);
       box-shadow: 0 4px 16px rgba(194, 30, 43, 0.35);
       white-space: nowrap;
-      animation: badgeShimmer 4s ease-in-out infinite;
     }
 
     .pricing-title {
@@ -1488,14 +1255,6 @@
       margin-bottom: 1rem;
     }
 
-    .pricing-desc {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.55;
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border-subtle);
-    }
 
     .pricing-bullets {
       list-style: none;
@@ -1992,12 +1751,7 @@
         opacity: 1 !important;
         transform: none !important;
       }
-      .hero-badge-pulse,
-      .hero-badge,
-      .hero-meta-badge svg,
-      .featured-pill,
-      .pricing-card.featured,
-      .work-play-badge {
+      .featured-pill, .pricing-card.featured, .work-play-badge {
         animation: none !important;
       }
     }
@@ -2013,13 +1767,6 @@
       --ease-out: cubic-bezier(.2, .8, .2, 1);
     }
 
-    .visually-hidden {
-      position: absolute !important;
-      width: 1px; height: 1px;
-      padding: 0; margin: -1px;
-      overflow: hidden; clip: rect(0, 0, 0, 0);
-      white-space: nowrap; border: 0;
-    }
 
     /* Scroll progress bar */
     .scroll-progress {
@@ -2167,7 +1914,7 @@
       position: absolute; inset: 0;
       z-index: 2;
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       letter-spacing: 0.1em;
       color: rgba(255, 255, 255, 0.92);
       pointer-events: none;
@@ -2181,31 +1928,18 @@
     .vf-rec i { width: 9px; height: 9px; border-radius: 50%; background: #E5432F; animation: recBlink 1.2s steps(1, end) infinite; }
     .vf-cam { position: absolute; top: 24px; right: 52px; }
     .vf-tc { position: absolute; bottom: 24px; left: 52px; font-variant-numeric: tabular-nums; }
-    .vf-meta { position: absolute; bottom: 24px; right: 52px; color: var(--accent); font-weight: 600; }
-    .vf-center {
-      position: absolute; top: 50%; left: 50%;
-      width: 28px; height: 28px;
-      transform: translate(-50%, -50%);
-    }
-    .vf-center::before, .vf-center::after {
-      content: ""; position: absolute; background: rgba(255,255,255,0.7);
-    }
-    .vf-center::before { left: 50%; top: 0; bottom: 0; width: 1px; }
-    .vf-center::after { top: 50%; left: 0; right: 0; height: 1px; }
 
     @media (max-width: 960px) {
       .hero-layout { grid-template-columns: 1fr; min-height: 0; }
-      .hero-visual { max-width: 560px; width: 100%; margin: 0 auto; }
-      .viewfinder { aspect-ratio: 16 / 11; }
     }
     @media (max-width: 520px) {
       .hero-heading { font-size: clamp(2.9rem, 15vw, 4rem); }
       .hero-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 0.9rem; }
       .hero .hero-cta-group { flex-direction: column; }
       .hero .hero-cta-group .btn { width: 100%; }
-      .vf-hud { font-size: 0.6rem; }
+      .vf-hud { font-size: 0.75rem; }
       .vf-rec, .vf-tc { left: 40px; }
-      .vf-cam, .vf-meta { right: 40px; }
+      .vf-cam { right: 40px; }
     }
 
     /* ---------------------------------- MARQUEE ---------------------------------- */
@@ -2220,7 +1954,7 @@
     .marquee-label {
       flex-shrink: 0;
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--accent);
@@ -2292,20 +2026,10 @@
       overflow: hidden;
       transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
     }
-    .audience-card::before {
-      content: "";
-      position: absolute; left: 0; top: 0;
-      height: 3px; width: 100%;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: 0 50%;
-      transition: transform 0.6s var(--ease-out);
-    }
     .audience-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,0.07); border-color: var(--border-accent); }
-    .audience-card:hover::before { transform: scaleX(1); }
     .audience-idx {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent-dark);
@@ -2388,7 +2112,6 @@
       background: var(--accent);
       border-color: var(--accent);
       color: #fff;
-      box-shadow: 0 0 0 6px var(--accent-glow);
     }
     .process-step h3 {
       font-weight: 800;
@@ -2417,7 +2140,6 @@
     }
     .capabilities .section-title { color: var(--paper-on-ink); }
     .capabilities .section-subtitle { color: var(--muted-on-ink); }
-    .capabilities .section-label { color: var(--accent); }
     .pillar-grid {
       position: relative;
       display: grid;
@@ -2514,8 +2236,6 @@
       .client-highlights { grid-template-columns: 1fr; }
     }
 
-    /* Numbers label */
-    .numbers-label { display: flex; justify-content: center; margin-bottom: 1.5rem; }
 
     /* ---------------------------------- WORK ---------------------------------- */
     .work-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -2644,7 +2364,7 @@
       border: 2px solid var(--accent);
       transition: background 0.4s, box-shadow 0.4s;
     }
-    .timeline-item.is-visible::before { background: var(--accent); box-shadow: 0 0 0 5px var(--accent-glow); }
+    .timeline-item.is-visible::before { background: var(--accent); }
     .timeline-when {
       font-family: var(--font-mono);
       font-size: 0.75rem;
@@ -2686,7 +2406,7 @@
     }
     .archival .archival-tag {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent-dark);
@@ -2741,7 +2461,7 @@
     .contact-method-item { display: grid !important; grid-template-columns: 72px minmax(0, 1fr); align-items: baseline; gap: 0.75rem; }
     .contact-k {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--text-muted);
@@ -2783,17 +2503,13 @@
     @keyframes lineUp { to { transform: translateY(0); } }
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
     @keyframes underlineIn { to { transform: scaleX(1); } }
-    @keyframes frameOpen { to { clip-path: inset(0 0 0 0 round 18px); } }
     @keyframes slowZoom { to { transform: scale(1.02); } }
-    @keyframes floatY { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
     @keyframes recBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
     @keyframes marquee { to { transform: translateX(-100%); } }
 
     @media (prefers-reduced-motion: reduce) {
       .hero-heading .line > span, .load-in { transform: none !important; opacity: 1 !important; animation: none !important; }
       .hero-heading em::after { transform: scaleX(1); animation: none; }
-      .viewfinder { clip-path: none; animation: none; }
-      .viewfinder-media img { animation: none; transform: none; }
       .marquee-viewport { overflow-x: auto; }
       .process-rail span { transform: scaleY(1); }
     }
@@ -2917,7 +2633,7 @@
     .shorts-hint {
       margin-top: 0.3rem;
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--text-muted);
@@ -3082,7 +2798,7 @@
       transform: rotate(45deg);
       flex-shrink: 0;
     }
-    .brand-logo-tagline { font-size: 0.6875rem; padding-left: 1.05rem; }
+    .brand-logo-tagline { font-size: 0.75rem; padding-left: 1.05rem; }
     .site-footer .brand-logo-tagline { padding-left: 0; }
 
     /* Buttons */
@@ -3097,7 +2813,7 @@
       text-transform: uppercase;
       box-shadow: none;
     }
-    .btn-sm { min-height: 44px; padding: 0.7rem 1.25rem; font-size: 0.6875rem; letter-spacing: 0.14em; }
+    .btn-sm { min-height: 44px; padding: 0.7rem 1.25rem; font-size: 0.75rem; letter-spacing: 0.14em; }
     .btn-primary { background: #C21E2B; border-color: #C21E2B; color: #fff; }
     .btn-primary:hover { background: #A81828; border-color: #A81828; color: #fff; box-shadow: 0 10px 24px rgba(194, 30, 43, 0.28); }
     .btn-secondary { background: transparent; border-color: #1A1A1A; color: #1A1A1A; box-shadow: none; }
@@ -3189,7 +2905,6 @@
 
     /* Readable small text */
     .work-category-badge, .featured-pill, .stat-sublabel, .badge { font-size: 0.75rem; }
-    .audience-card::before { display: none; }
     .newsletter-input::placeholder { color: rgba(255, 255, 255, 0.72); }
     .featured-pill { background: #C21E2B; color: #fff; }
     .work-category-badge { background: rgba(0, 0, 0, 0.78); color: #fff; }
@@ -3210,6 +2925,14 @@
       .hero-film img { animation: none; }
       .btn-ghost:hover { transform: none; }
     }
+    /* ---------------------------------- POLISH ---------------------------------- */
+    html { scroll-padding-top: var(--header-height); }
+    .form-input, .form-select, .form-textarea, .newsletter-input { font-size: 1rem; }
+    .stat-number, .proof-num { font-variant-numeric: tabular-nums; }
+    .btn:active { transform: scale(0.98); }
+    @media (hover: none) { .shorts-hint { display: none; } }
+    @media (max-height: 500px) { .hero { min-height: 0; padding-top: 3.5rem; } }
+    @media (prefers-reduced-motion: reduce) { .marquee-track, .vf-rec i { animation: none !important; } }
   </style>
 </head>
 <body>
@@ -3261,7 +2984,7 @@
         <span class="mobile-drawer-tagline">[ EST. 1985 &bull; 40 YEARS ]</span>
       </div>
       <button type="button" class="mobile-drawer-close" id="mobileDrawerCloseBtn" aria-label="Close navigation menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
     </div>
 
@@ -3304,7 +3027,7 @@
     <section class="hero" id="hero" aria-labelledby="hero-heading">
       <div class="hero-film" id="heroFilm" aria-hidden="true">
         <picture>
-          <source srcset="assets/images/services/service-video-production.webp" type="image/webp">
+          <source srcset="assets/images/services/service-video-production-800.webp 800w, assets/images/services/service-video-production.webp 1376w" sizes="100vw" type="image/webp">
           <img src="assets/images/services/service-video-production.jpg" alt="" width="1376" height="768" fetchpriority="high">
         </picture>
       </div>
@@ -3414,7 +3137,7 @@
           <article class="service-card reveal">
             <div class="service-img-wrap">
               <picture>
-                <source srcset="assets/images/services/service-video-production.webp" type="image/webp">
+                <source srcset="assets/images/services/service-video-production-800.webp 800w, assets/images/services/service-video-production.webp 1376w" sizes="(min-width: 900px) 510px, 100vw" type="image/webp">
                 <img src="assets/images/services/service-video-production.jpg" alt="Commercial camera unit on a film set" class="service-img" loading="lazy" width="1376" height="768">
               </picture>
               <span class="service-num-badge">/01</span>
@@ -3443,7 +3166,7 @@
           <article class="service-card reveal">
             <div class="service-img-wrap">
               <picture>
-                <source srcset="assets/images/services/service-social-media.webp" type="image/webp">
+                <source srcset="assets/images/services/service-social-media-800.webp 800w, assets/images/services/service-social-media.webp 1376w" sizes="(min-width: 900px) 510px, 100vw" type="image/webp">
                 <img src="assets/images/services/service-social-media.jpg" alt="Post-production and colour grading suite" class="service-img" loading="lazy" width="1376" height="768">
               </picture>
               <span class="service-num-badge">/02</span>
@@ -3472,7 +3195,7 @@
           <article class="service-card reveal">
             <div class="service-img-wrap">
               <picture>
-                <source srcset="assets/images/services/service-creator-management.webp" type="image/webp">
+                <source srcset="assets/images/services/service-creator-management-800.webp 800w, assets/images/services/service-creator-management.webp 1376w" sizes="(min-width: 900px) 510px, 100vw" type="image/webp">
                 <img src="assets/images/services/service-creator-management.jpg" alt="Creator podcast studio with production lighting" class="service-img" loading="lazy" width="1376" height="768">
               </picture>
               <span class="service-num-badge">/03</span>
@@ -3914,9 +3637,9 @@
             <p class="pricing-lead">Bring the brief. We bring the cinematic edge.</p>
             <p class="pricing-tagline">A single commercial, ad film or campaign asset.</p>
             <ul class="pricing-bullets">
-              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>End-to-end production</span></li>
-              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Crew, kit and location management</span></li>
-              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Editing, grade and sound</span></li>
+              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>End-to-end production</span></li>
+              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Crew, kit and location management</span></li>
+              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Editing, grade and sound</span></li>
             </ul>
             <a href="#contact" class="btn btn-secondary" data-scope="Commercial / ad film">Start a project</a>
           </article>
@@ -3927,9 +3650,9 @@
             <p class="pricing-lead">Your complete digital presence, handled.</p>
             <p class="pricing-tagline">Your brand's always-on content and growth engine.</p>
             <ul class="pricing-bullets">
-              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Monthly content calendars &amp; shoots</span></li>
-              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Copywriting, design &amp; video pipelines</span></li>
-              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Organic growth &amp; platform strategy</span></li>
+              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Monthly content calendars &amp; shoots</span></li>
+              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Copywriting, design &amp; video pipelines</span></li>
+              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Organic growth &amp; platform strategy</span></li>
             </ul>
             <a href="#contact" class="btn btn-primary" data-scope="Marketing management retainer">Talk retainers</a>
           </article>
@@ -3939,9 +3662,9 @@
             <p class="pricing-lead">Your vision. Our infrastructure.</p>
             <p class="pricing-tagline">High-volume institutional production, or dedicated management for top creators.</p>
             <ul class="pricing-bullets">
-              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Multi-site, multi-unit production</span></li>
-              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Dedicated strategy &amp; analytics teams</span></li>
-              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Compliance, versioning and brand safety</span></li>
+              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Multi-site, multi-unit production</span></li>
+              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Dedicated strategy &amp; analytics teams</span></li>
+              <li class="pricing-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Compliance, versioning and brand safety</span></li>
             </ul>
             <a href="#contact" class="btn btn-secondary" data-scope="Institutional / PSU programme">Brief our team</a>
           </article>
@@ -4388,9 +4111,6 @@
       const processFill = document.getElementById('processRailFill');
       const processSteps = processList ? Array.from(processList.querySelectorAll('.process-step')) : [];
 
-      // Gentle parallax on the hero image
-      const heroMedia = document.querySelector('.viewfinder-media');
-
       // Header slate: shows which chapter of the page you are on
       const sceneSections = Array.from(document.querySelectorAll('[data-scene]'));
       const sceneSlate = document.getElementById('sceneSlate');
@@ -4448,7 +4168,7 @@
         const probe = y + 140;
         sections.forEach(section => {
           const id = section.getAttribute('id');
-          if (navIds.has(id) && probe >= section.offsetTop) current = id;
+          if (id !== 'hero' && probe >= section.offsetTop) current = navIds.has(id) ? id : '';
         });
         if (y >= docH - 4) current = 'contact';
 
@@ -4496,9 +4216,6 @@
 
         updateStack();
 
-        if (heroMedia && y < vh * 1.2) {
-          heroMedia.style.transform = `translate3d(0, ${y * 0.06}px, 0)`;
-        }
       }
 
       window.addEventListener('scroll', () => {
